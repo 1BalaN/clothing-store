@@ -18,7 +18,7 @@ const shopReviewRouter = require('./routes/shop/product-review-routes');
 const commonFeatureRouter = require('./routes/common/feature-routes');
 
 //db connection
-mongoose.connect('mongodb+srv://gormachdv95:gd1428V95@cluster0.fhmai.mongodb.net/')
+mongoose.connect('добавь свой URL для подлкючения к бд')
 .then(() => console.log('БД подключена')).catch((error) => console.log(error));
 
 const app = express()
