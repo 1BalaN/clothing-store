@@ -25,6 +25,7 @@ import PaypalReturnPage from './pages/shopping-view/paypal-return'
 import PaymentSuccessPage from './pages/shopping-view/payment-success'
 import Loader from './components/common/loader'
 import SearchProducts from './pages/shopping-view/search'
+import Footer from './components/common/footer'
 
 function App() {
 
@@ -86,6 +87,7 @@ function App() {
 
       </Routes>
 
+      <Footer /> 
     </div>
   )
 }

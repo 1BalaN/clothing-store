@@ -8,7 +8,7 @@ import { ShoppingCart } from "lucide-react";
 function ShoppingProductTile({product, handleGetProductDetails, handleAddtoCart}) {
 
 
-    return ( 
+    return (
         <Card className="w-full max-w-sm mx-auto" >
             <div onClick={()=> handleGetProductDetails(product?._id)}>
                 <div className="relative">

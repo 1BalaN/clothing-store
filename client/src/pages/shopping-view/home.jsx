@@ -1,7 +1,4 @@
 import { Button } from '@/components/ui/button';
-import bannerOne from '../../assets/banner_1.jpg'
-import bannerTwo from '../../assets/banner_2.webp'
-import bannerThree from '../../assets/banner_3.jpg'
 import { BabyIcon, ChevronLeftIcon, ChevronRightIcon, Footprints, ShirtIcon, WatchIcon } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { useEffect, useState } from 'react';
@@ -96,7 +93,7 @@ function ShoppingHome() {
             setCurrentSlide(prevSlide=>(prevSlide + 1) % featureImageList.length)
         }, 5000)
         return ()=>clearInterval(timer)
-    },[])
+    },[featureImageList])
 
     useEffect(()=>{
         dispatch(fetchAllFilteredProducts({filterParams: {}, sortParams: 'price-lowtohigh'}))
@@ -127,7 +124,7 @@ function ShoppingHome() {
                 <Button 
                     variant="outline" 
                     size="icon" 
-                    onClick={()=>setCurrentSlide(prevSlide=>(prevSlide - 1 + slides.length) % slides.length)}
+                    onClick={()=>setCurrentSlide(prevSlide=>(prevSlide - 1 + featureImageList.length) % featureImageList.length)}
                     className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/80" 
                 > 
                     <ChevronLeftIcon className='w-4 h-4'/>
@@ -135,7 +132,7 @@ function ShoppingHome() {
                 <Button 
                     variant="outline" 
                     size="icon" 
-                    onClick={()=>setCurrentSlide(prevSlide=>(prevSlide + 1) % slides.length)}
+                    onClick={()=>setCurrentSlide(prevSlide=>(prevSlide + 1) % featureImageList.length)}
                     className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/80" 
                 > 
                     <ChevronRightIcon className='w-4 h-4'/>
